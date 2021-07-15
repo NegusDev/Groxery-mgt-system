@@ -1,0 +1,12 @@
+/* @font-face */
+
+@font-face {
+    font-family: "Lateef";
+    src: '../fonts/Lateef/Lateef-Regular.ttf';
+
+}
+
+@font-face {
+    font-family: "BerkshireSwash";
+    src: '../fonts/Berkshire/BerkshireSwash-Regular.ttf';
+}
