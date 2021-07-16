@@ -22,12 +22,3 @@ $Salesman = new Salesman($Db);
 $page = [];
 $show = [];
 $addRow = [];
-
-
-// foreach ($params as $param => $data['order_id']) {
-//     "order_id";
-//     $param['product_name'];
-//     $param['product_qty'];
-//     $param['product-total'];
-// }
-
