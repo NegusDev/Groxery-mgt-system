@@ -5,7 +5,7 @@ class Order extends DbController
 
     public function getAllOrders()
     {
-        $sql = "SELECT * FROM orders";
+        $sql = "SELECT * FROM orders ORDER BY date";
         $result = $this->conn->query($sql) or die($this->conn->error);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
