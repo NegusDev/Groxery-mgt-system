@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include('../Config.php');
 
 $admin_rows = $Product-> getTotalRows($table = 'admin');

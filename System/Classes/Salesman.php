@@ -46,4 +46,9 @@ class Salesman extends DbController
         }
         return $employee ?? [];
     }
+      // login
+    public function getAdminInfo($table,$username,$password) {
+    $sql ="SELECT * FROM $table WHERE username= '$username' AND password= '$password' " or die($this->conn->error);
+    return $this->conn->query( $sql);
+    }
 }
