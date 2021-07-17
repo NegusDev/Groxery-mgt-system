@@ -11,15 +11,12 @@ class OrderDetails extends Product
             while ($row = $result->fetch_assoc()) {
                 $products[] = $row;
             }
-            return $products;
-
+            $products;
         }
-
     }
 
     public function getProduct($table = 'product')
     {
-
         $sql = "SELECT * FROM  $table";
         $result = $this->conn->query($sql);
         if ($result->num_rows > 0) {
@@ -54,36 +51,19 @@ class OrderDetails extends Product
         return $result;
 
     }
+    public function getOrders(){
+        $sql = "SELECT * FROM  order_details ";
+        $result = $this->conn->query($sql);
+        $resultArray = array();
+		while ($rows = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+			$resultArray[] = $rows;
+		}
 
-    // add to order details
-    // public function addToOrderDetails($order_id,$product_id,$quantity,$total_price) {
-    //     if (isset($order_id) && isset($product_id) && isset($quantity) && isset($total_price)) {
-
-    //         $params = array(
-    //             "order_id" => $order_id,
-    //             "product_id" => $product_id,
-    //             "quantity" => $quantity,
-    //             "total_price" => $total_price
-    //         );
-    //         $result = $this->insertIntoOrderDetails($params);
-    //         if ($result) {
-    //         // RELOAD PAGE
-    //             header("Location:" .$_SERVER['PHP_SELF']);
-    //         }
-
-    //     }
-
-    // }
-
+		return $resultArray;
+    }
+    public function deleteOrder($id) {
+        $result = $this->conn->query("DELETE  FROM order_details WHERE order_id = $id") or die($this->conn->error);
+        return $result;
+    }
 
 }
-
-
-// $order_datas = [];
-//         foreach ($order_datas as $order_data) {
-//             $order_data['order_id'];
-//             $order_data['product_id'];
-//             $order_data['quantity'];
-//             $order_data['total_price'];
-//         }
-//         $result = $this->conn->query($sql,$order_datas) or die($this->conn->error);
