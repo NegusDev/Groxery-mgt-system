@@ -30,16 +30,15 @@ if (isset($_POST['del_id'])) {
 
 if (isset($_POST['update'])) {
     $id ='';
-    $data = [
-       'service_title' => $_POST['service_title'],
-        'service_description' => $_POST['service_description'],
-        'service_icon' => $_POST['service_icon'],
-        'service_id' => $_POST['service_id']
+    $data = [ 
+    'salesman_name' => $_POST['employee_name'],
+    'salary' => $_POST['salary'],
+    'profile' => $_POST['image']
     ];
 
     $result = $Service->updateService ($id,$data);
     if ($result) {
-        echo "<script>alert('Message Sent successfully')</script>";
+        echo "<script>alert('Updated Successfully')</script>";
         // RELOAD PAGE
         header("location:./services.php");
 

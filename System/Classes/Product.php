@@ -40,8 +40,7 @@ class Product extends DbController
         return $html;
 
     }
-    // data-bs-toggle="modal" data-bs-target="#updateProductModel"
-    //data-bs-target="#deleteProductModel"
+    
     public function getProductById(int $product_id): array
     {
 

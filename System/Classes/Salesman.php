@@ -34,4 +34,16 @@ class Salesman extends DbController
         $result = $this->conn->query($sql) or die($this->conn->error);
         return $result;
     }
+
+    public function getEmployeeById(int $salesman_id): array{
+
+        $result = $this->conn->query("SELECT * FROM   `salesman` WHERE `salesman_id`=$salesman_id ") or die($this->conn->error);
+        //      While loop for fetching product data one by one
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $employee = $row;
+            }
+        }
+        return $employee ?? [];
+    }
 }
