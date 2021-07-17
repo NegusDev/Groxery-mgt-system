@@ -61,7 +61,7 @@
                             <h5 class="pb-5" >Products Sold</h5>
                         </div>
                         <div class="col-md-4 mt-5">
-                           <a href="./order.php"><i class="fas fa-shopping-cart fa-2x my-3 ad-icon"></i></a>
+                           <a href="./sold.php"><i class="fas fa-shopping-cart fa-2x my-3 ad-icon"></i></a>
                         </div>
                     </div>
                 </div>
