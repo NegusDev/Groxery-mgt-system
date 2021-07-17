@@ -1,11 +1,15 @@
 <?php 
+include('../Config.php');
 
-require_once('Config.php');
-var_dump($Order->getTotalAmount());
-
-$getOrders = $Order->getAllOrders();
-$page['content'] = $Order->viewAllOrders($getOrders);
+$admin_rows = $Product-> getTotalRows($table = 'admin');
+$product_rows = $Product-> getTotalRows($table = 'product');
+$sale_rows = $Product-> getTotalRows($table = 'salesman');
+$details_rows = $Product-> getTotalRows($table = 'order_details');
+$order_rows = $Product-> getTotalRows($table = 'orders');
+$uom_rows = $Product-> getTotalRows($table = 'uom');
 
 $View->header();
-include('Templates/_order.php');
+
+include('../Templates/_dashboard.php');
+
 $View->footer();

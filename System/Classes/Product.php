@@ -101,6 +101,11 @@ class Product extends DbController
         }
         return false;
     }
+    public function getTotalRows($table = 'admins') {
+        $result = $this->conn->query("SELECT * FROM {$table}") or die($this->conn->error);
+        $num = mysqli_num_rows( $result);
+        return $num;
+    }
 
 
 }
