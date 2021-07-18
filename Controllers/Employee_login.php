@@ -12,7 +12,7 @@ if (isset($_POST['login'])) {
 
             echo "<script>alert('You have logged in as an Employee')</script>";
 
-            $_SESSION['salesman'] = $_POST['username'];
+            $_SESSION['salesman'] = $_POST['employee_name'];
 
             header("Location:index.php");
             exit();
