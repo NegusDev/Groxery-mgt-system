@@ -6,7 +6,7 @@ if (isset($_POST['login'])) {
     $username = $_POST['employee_name'];
     $password = $_POST['password'];
 
-    $result = $Salesman->getAdminInfo( 'salesman',$username,$password);
+    $result = $Salesman->getEmployeeInfo( 'salesman',$username,$password);
     if ($result) {
         if (mysqli_num_rows($result) == 1) {
 
