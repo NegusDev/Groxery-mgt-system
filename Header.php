@@ -52,7 +52,7 @@
                             <a href="employee_login.php" class="nav-link text-capitalize">Login for Employee</a>
                         </li> 
                         <li class="nav-item">
-                            <a href="../adminlogin.php" class="nav-link text-capitalize">Login for Admin</a>
+                            <a href="adminlogin.php" class="nav-link text-capitalize">Login for Admin</a>
                         </li> 
                         </ul>';
             }
