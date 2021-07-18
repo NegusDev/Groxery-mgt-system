@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once('Config.php');
 include('Controllers/Add_To_Cart.php');
 
