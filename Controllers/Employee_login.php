@@ -17,7 +17,6 @@ if (isset($_POST['login'])) {
             header("Location:index.php");
             exit();
 
-
         }else {
             echo "<script>alert('Invalid Username or Password')</script>";
         }
