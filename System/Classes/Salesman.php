@@ -51,8 +51,15 @@ class Salesman extends DbController
     $sql ="SELECT * FROM $table WHERE username= '$username' AND password= '$password' " or die($this->conn->error);
     return $this->conn->query( $sql);
     }
+
     public function getEmployeeInfo($table,$username,$password) {
         $sql ="SELECT * FROM $table WHERE salesman_name= '$username' AND password= '$password' " or die($this->conn->error);
         return $this->conn->query( $sql);
-        }
+    }
+
+    public function deleteEmployee($salesman_id) {
+        $result = $this->conn->query("DELETE FROM salesman WHERE salesman_id = $salesman_id") or die($this->conn->error);
+        return $result;
+    }
+
 }

@@ -16,6 +16,9 @@
         <div class="row justify-content-center my-3">
             <div class="col-12 col-md-6 bg-light my-3">
                 <form action="" method="post" class="p-3 border">
+                            <input type="hidden" class="form-control" name="id"
+                                   value="<?= $update['product_id'] ?>">
+                       
                     <div class="py-2">
                         <div class="input-group mb-2">
                             <div class='input-group-text bg-warning'><i class='fas fa-shopping-cart'></i></div>

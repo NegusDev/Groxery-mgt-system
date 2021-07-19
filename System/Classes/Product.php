@@ -79,19 +79,16 @@ class Product extends DbController
 
     }
 
-    public function updateProduct($product_id = null, $data = array())
+    public function updateProduct($product_id = null,$product_name,$qty,$uom,$price)
     {
         if ($this->conn != null) {
             if ($product_id != null) {
-                $values = "'" . implode("','", array_values($data)) . "'";
-
-                $query_string = sprintf("UPDATE product 
-                        SET `product_name` = %s, `number_of_produt` = %s,  `uom_id` = %s, `price_per_unit` = %s
-                        WHERE `product_id` = %s", $values,
-                    $values, $values, $values, $product_id);
-                $result = $this->conn->query($query_string) or die($this->conn->error);
+                $sql = "UPDATE product 
+                        SET `product_name` ='$product_name', `number_of_produt` ='$qty' ,  `uom_id` = '$uom', `price_per_unit` = '$price'
+                        WHERE `product_id` = '$product_id' ";
+                $result = $this->conn->query($sql) or die($this->conn->error);
                 if ($result) {
-                    echo "Updated";
+                    return true;
                 } else {
                     return false;
                 }

@@ -1,4 +1,4 @@
-<section class="py-3">
+<section class="py-3 col-md-10">
     <div class="container">
         <div class="row justify-content-center my-3">
             <div class="col-12 col-md-6 bg-light  my-3">

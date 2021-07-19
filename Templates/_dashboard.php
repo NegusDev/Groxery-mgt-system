@@ -1,5 +1,5 @@
-<section class="dashboard mt-3">
-    <div class="container-fluid">
+<section class="dashboard mt-3 col-md-10">
+    <div class="container">
         <div class="row">
             <div class="col-md-4 my-2">
                 <div class="box-content bg-success">

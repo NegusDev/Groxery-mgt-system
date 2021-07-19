@@ -66,4 +66,39 @@
 
 <!-- main -->
 <main id="main">
+    <div class="row">
+        <div class="col-md-2">
+        <?php 
+            if (isset($_SESSION['admin'])) {
+            $user = $_SESSION['admin'];  
+            echo '
+            <div class="list-group bg-light fw-bold" style="height:90vh;">
+                <a href="index.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">Dashboard</a>
+                <a href="admin.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">'.$user.' profile</a>
+                <a href="sales.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">employees</a>
+                <a href="product.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">Products</a>
+                <a href="order_details.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">order lists</a>
+                <a href="sold.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">sales</a>
+                <a href="uom.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">Uom</a>
+                <a href="admin/" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">Income</a>
+            </div>';
+            }elseif (isset($_SESSION['salesman'])) {
+                $emp = $_SESSION['salesman'];
+                echo '
+            <div class="list-group bg-light fw-bold" style="height:90vh;">
+                <a href="admin.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">Admin profile</a>
+                <a href="product.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">Products</a>
+            </div>';
+            }else {
+                echo '
+                <div class="list-group bg-light fw-bold" style="height:90vh;">
+                    <a href="adminlogin.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark">Login for Admins only</a>
+                    <a href="employee_login.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark">Login for employees</a>
+                </div> 
+                ';
+            }
+
+        ?>    
+        </div>
+
 

@@ -1,4 +1,4 @@
-<section id="product" class="py-3">
+<section id="product" class="py-3 col-md-10">
     <div class="container bg-light">
         <div class="row">
             <div class="col-12 col-sm-12">
@@ -41,7 +41,7 @@
                                         >Edit</a>
                                         <form action="" method="post" class="d-inline-block">
                                             <input type="hidden" name="del_id" value="<?= $users['salesman_id'] ?>">
-                                            <input type="submit" class="btn btn-danger" value="Delete">
+                                            <input type="submit" class="btn btn-danger" value="Delete" id="delete">
                                         </form>
                                     </td>
                                 </tr>

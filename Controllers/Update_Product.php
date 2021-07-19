@@ -1,20 +1,16 @@
 <?php
 if (isset($_POST['update'])) {
+    $product_id = $_POST['id'];
+    $product_name =  $_POST['product_name'];
+    $qty =  $_POST['nop'];
+    $uom = $_POST['unit'];
+    $price =  $_POST['price'];
 
-    $data = array(
-        'product_name' => $_POST['product_name'],
-        'number_of_produt' => $_POST['nop'],
-        'uom_id' => $_POST['unit'],
-        'price_per_unit' => $_POST['price']
-    );
-
-    $result = $Product->updateProduct($data);
+    $result = $Product->updateProduct($product_id,$product_name,$qty,$uom,$price);
     if ($result) {
-        $show = "<h5 class='text-center alert alert-success'>Product Added Successfully</h5>";
-
+        header("location:./product.php");
     } else {
-        $show = "<h5 class='text-center alert alert-danger'>Failed</h5>";
-        die($show);
+        die('failed');
 
     }
 

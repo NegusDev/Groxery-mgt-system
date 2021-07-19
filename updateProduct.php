@@ -1,4 +1,5 @@
 <?php
+session_Start();
 ob_start();
 /**
  * @var Product $Product

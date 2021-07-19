@@ -43,6 +43,10 @@ function displayData(e) {
     }
     
 }
+
+$('form #delete').click(function(){
+    confirm("Are you sure");
+});
 // select box to fill price
 // $(document).ready(function () {
 //     $("#product").change(function () {

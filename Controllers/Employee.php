@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
 //delete
 if (isset($_POST['del_id'])) {
     $del_id = $_POST['del_id'];
-    if ($Admin->deleteInfo($del_id,'services')) {
+    if ($Salesman->deleteEmployee($del_id)) {
        echo "deleted";
         // RELOAD PAGE
         header("Location:" . $_SERVER['PHP_SELF']);
