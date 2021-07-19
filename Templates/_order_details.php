@@ -45,7 +45,9 @@
                             </select>
                         </td>
                         <td class="my-1  product-qty"><input type="number" name="product-qty" data-id="" class="form-control" value=""></td>
-                        <td class="my-1  product-price"><input type="number" data-id="" name="product-price"class="form-control price" value=""></td>
+                        <td class="my-1  product-price"><input type="number" data-id="<?php foreach ($getlisting as $id) {
+                            echo $id['product_id'];
+                        }  ?>" name="product-price"class="form-control price" value=""></td>
                         <td class="my-1 product-total">
                             <input type="number" name="product-total" data-id="" class="d-inline form-control w-50 total">Shs
                             <!-- remove row -->
