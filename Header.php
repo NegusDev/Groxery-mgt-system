@@ -18,29 +18,30 @@
             if (isset($_SESSION['admin'])) {
                 $user = $_SESSION['admin'];
                 echo '
-                <div class="m-auto">
+                <div class="mt-2">
                     <a href="index.php" class=" text-success"><i class="fas fa-home fa-2x pe-2"></i></a>
                     <a href="order.php" class="text-danger"><i class="fas fa-th-list fa-2x"></i></a>
                 </div>
-                <ul class="nav m-auto list-unstyled">
+                <ul class="nav list-unstyled">
                         <li class="nav-item">
-                            <a href="" class="nav-link text-capitalize"><i class="fas fa-user-astronaut fa-2x icon"></i>'.$user.'</a>
+                            <a href="" class="nav-link text-capitalize"><i class="fas fa-user-astronaut fa-2x icon"></i> '.$user.'</a>
                         </li>
                         <li class="nav-item">
                             <a href="./logout.php" class="nav-link text-capitalize"><i class="fas fa-sign-out-alt fa-2x icon"></i> Log Out</a>
-                        </li>';
+                        </li>
+                        </ul>';
              }elseif (isset($_SESSION['salesman'])) {
 
                 $mm = $_SESSION['salesman'];
 
                 echo '
-                <div class="m-auto">
+                <div class="mt-2">
                     <a href="index.php" class=" text-success"><i class="fas fa-home fa-2x pe-2"></i></a>
                     <a href="order.php" class="text-danger"><i class="fas fa-th-list fa-2x"></i></a>
                 </div>
-                <ul class="nav m-auto list-unstyled">
+                <ul class="nav list-unstyled">
                     <li class="nav-item">
-                       <a href="" class="nav-link text-capitalize"><i class="fas fa-user-astronaut fa-2x icon"></i>'.$mm.'</a>
+                       <a href="" class="nav-link text-capitalize"><i class="fas fa-user fa-2x icon"></i> '.$mm.'</a>
                    </li>
                     <li class="nav-item">
                         <a href="logout_employee.php" class="nav-link text-capitalize"><i class="fas fa-sign-out-alt fa-2x icon"></i> Log Out</a>
@@ -84,7 +85,7 @@
             }elseif (isset($_SESSION['salesman'])) {
                 $emp = $_SESSION['salesman'];
                 echo '
-            <div class="list-group bg-light fw-bold" style="height:90vh;">
+            <div class="list-group bg-light fw-bold" style="height:100vh;">
                 <a href="admin.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">'.$emp.' profile</a>
                 <a href="product.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">Products</a>
             </div>';
