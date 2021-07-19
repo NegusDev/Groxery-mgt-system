@@ -13,7 +13,7 @@
 </head>
 <body>
 <header id="header">
-    <div class="strip d-flex justify-content-between px-4 py-1 bg-light">
+    <div class="strip d-flex justify-content-between px-4 py-1 bg-light bg-dark text-white">
         <?php
             if (isset($_SESSION['admin'])) {
                 $user = $_SESSION['admin'];
@@ -44,18 +44,17 @@
                    </li>
                     <li class="nav-item">
                         <a href="logout_employee.php" class="nav-link text-capitalize"><i class="fas fa-sign-out-alt fa-2x icon"></i> Log Out</a>
-                    </li>';
+                    </li>
+                    </ul>';
 
 
             } else {
                 echo ' 
-                    <li class="nav-item">
-                        <a href="employee_login.php" class="nav-link text-capitalize">Login for Employee</a>
-                    </li> 
-                    <li class="nav-item">
-                        <a href="adminlogin.php" class="nav-link text-capitalize">Login for Admin</a>
-                    </li> 
-                </ul>';
+                <div class="m-auto ">
+                        <h2 class="nav-link text-capitalize">Negus Stores</h2>
+                 </div> 
+                    
+                ';
             }
             ?>
 
@@ -72,7 +71,7 @@
             if (isset($_SESSION['admin'])) {
             $user = $_SESSION['admin'];  
             echo '
-            <div class="list-group bg-light fw-bold" style="height:90vh;">
+            <div class="list-group fw-bold" style="height:90vh;">
                 <a href="index.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">Dashboard</a>
                 <a href="admin.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">'.$user.' profile</a>
                 <a href="sales.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">employees</a>
@@ -86,7 +85,7 @@
                 $emp = $_SESSION['salesman'];
                 echo '
             <div class="list-group bg-light fw-bold" style="height:90vh;">
-                <a href="admin.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">Admin profile</a>
+                <a href="admin.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">'.$emp.' profile</a>
                 <a href="product.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">Products</a>
             </div>';
             }else {
