@@ -25,7 +25,8 @@ $(document).on("click", ".remove-trow", function () {
 })
 
 $('#product').change( e =>{
-    displayData(e);
+    let textvalues = displayData(e);
+    console.log(textvalues);
 })
 
 function displayData(e) {
@@ -37,8 +38,7 @@ function displayData(e) {
     for (const values of td) {
         
         if (values.dataset.id == e.target.dataset.id) {
-            console.log(e.target.dataset.id);
-            console.log(values);
+            textvalues[product_id++] = value.textContent;
         }
     }
     

@@ -46,10 +46,12 @@
                         </td>
                         <td class="my-1  product-qty"><input type="number" name="product-qty" data-id="" class="form-control" value=""></td>
                         <td class="my-1  product-price"><input type="number" data-id="<?php foreach ($getlisting as $id) {
-                            echo $id['product_id'];
+                            echo $id['price_per_unit'];
                         }  ?>" name="product-price"class="form-control price" value=""></td>
                         <td class="my-1 product-total">
-                            <input type="number" name="product-total" data-id="" class="d-inline form-control w-50 total">Shs
+                            <input type="number" name="product-total" data-id="<?php foreach ($getlisting as $id) {
+                            echo $id['price_per_unit'];
+                        }  ?>" class="d-inline form-control w-50 total">Shs
                             <!-- remove row -->
                             <button type="button" class="btn btn-danger ms-2 d-inline form-control w-25 remove-trow">
                                 Remove
