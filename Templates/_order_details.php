@@ -44,13 +44,11 @@
                                 <?= $show['content']; ?>
                             </select>
                         </td>
-                        <td class="my-1  product-qty"><input type="number" name="product-qty" id="qty"
-                                                             class="form-control" value=""></td>
-                        <td class="my-1  product-price"><input type="number" id="show_price" name="product-price"
-                                                               class="form-control" value=""</td>
+                        <td class="my-1  product-qty"><input type="number" name="product-qty" data-id="" class="form-control" value=""></td>
+                        <td class="my-1  product-price"><input type="number" data-id="" name="product-price"class="form-control price" value=""></td>
                         <td class="my-1 product-total">
-                            <input type="number" name="product-total" id="total_price"
-                                   class="d-inline form-control w-50 ">Shs
+                            <input type="number" name="product-total" data-id="" class="d-inline form-control w-50 total">Shs
+                            <!-- remove row -->
                             <button type="button" class="btn btn-danger ms-2 d-inline form-control w-25 remove-trow">
                                 Remove
                             </button>

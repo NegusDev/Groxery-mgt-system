@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if (isset($_POST['login'])) {
 
     $username = $_POST['employee_name'];

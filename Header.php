@@ -43,7 +43,7 @@
                        <a href="" class="nav-link text-capitalize"><i class="fas fa-user-astronaut fa-2x icon"></i>'.$mm.'</a>
                    </li>
                     <li class="nav-item">
-                        <a href="./logout.php" class="nav-link text-capitalize"><i class="fas fa-sign-out-alt fa-2x icon"></i> Log Out</a>
+                        <a href="logout_employee.php" class="nav-link text-capitalize"><i class="fas fa-sign-out-alt fa-2x icon"></i> Log Out</a>
                     </li>';
 
 

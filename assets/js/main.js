@@ -1,6 +1,6 @@
 function calculateValue() {
     let total = 0;
-    $("#product_name").each(function (index) {
+    $("#product").each(function (index) {
         let qty = parseFloat($(this).find('#qty').val());
         let price = parseFloat($(this).find('#show_price').val());
         item_price = qty * price;
@@ -24,22 +24,36 @@ $(document).on("click", ".remove-trow", function () {
     calculateValue();
 })
 
+$('#product').change( e =>{
+    displayData();
+})
 
+function displayData(e) {
+
+    let product_id = 0;
+    const td = $('tr .price,.total');
+    let textvalues = [];
+
+    for (const values of td) {
+        console.log(values);
+    }
+    
+}
 // select box to fill price
-$(document).ready(function () {
-    $("#product").change(function () {
-        let product_id = $(this).val();
-        $.ajax({
-            url: "./Controllers/Add_To_Cart.php",
-            method: "request",
-            data: {product_id: product_id},
-            success: function (data) {
-                $("#show_price").html(data);
-                $("#total_price").html(data);
-            }
-        });
-    });
-});
+// $(document).ready(function () {
+//     $("#product").change(function () {
+//         let product_id = $(this).val();
+//         $.ajax({
+//             url: "./Controllers/Add_To_Cart.php",
+//             method: "request",
+//             data: {product_id: product_id},
+//             success: function (data) {
+//                 $("#show_price").html(data);
+//                 $("#total_price").html(data);
+//             }
+//         });
+//     });
+// });
 
 
 // $("#product").click(function(selectProduct){
