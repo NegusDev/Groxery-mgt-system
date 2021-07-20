@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
 
     $result = $Salesman->CreateEmployee('salesman', $data);
     if ($result) {
-        move_uploaded_file($_FILES['image']['tmp_name'], "img/$data");
+        move_uploaded_file($_FILES['image']['tmp_name'], "img/" .$data['profile']);
         echo "<script>alert('Added New Employee')</script>";
         // RELOAD PAGE
         header("Location:" . $_SERVER['PHP_SELF']);
