@@ -1,6 +1,6 @@
 <?php
 
-
+ // add new product
 $errors = "";
 if (!empty($_POST['submit'])) {
     $data = array(
@@ -32,6 +32,36 @@ if (!empty($_POST['submit'])) {
         }
     }
 
+}
+
+//update existing product
+if (isset($_POST['update'])) {
+    $product_id = $_POST['id'];
+    $product_name =  $_POST['product_name'];
+    $qty =  $_POST['nop'];
+    $uom = $_POST['unit'];
+    $price =  $_POST['price'];
+
+    $result = $Product->updateProduct($product_id,$product_name,$qty,$uom,$price);
+    if ($result) {
+        header("location:./product.php");
+    } else {
+        die('failed');
+
+    }
+
+}
+
+//delete product
+if (isset($_POST['del_id'])) {
+    $del_id = $_POST['del_id'];
+    if ($Product->deleteProduct($del_id,'product')) {
+       echo "deleted";
+        // RELOAD PAGE
+        header("Location:" . $_SERVER['PHP_SELF']);
+    }else {
+        die('failed');
+    }
 }
 
 

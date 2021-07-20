@@ -7,7 +7,7 @@ ob_start();
  */
 
 include('Config.php');
-include('Controllers/Update_product.php');
+include('Controllers/Product.php');
 
 
 $product_id = (int)$_GET['update'];

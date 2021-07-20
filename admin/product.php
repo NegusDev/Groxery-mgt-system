@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once('../Config.php');
-include('../Controllers/AddProduct.php');
+include('../Controllers/Product.php');
 
 // $product_id = (int) $_GET['update'];
 // $update= $Product->getProductById($product_id );

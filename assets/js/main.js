@@ -48,20 +48,21 @@ $('form #delete').click(function(){
     confirm("Are you sure");
 });
 // select box to fill price
-// $(document).ready(function () {
-//     $("#product").change(function () {
-//         let product_id = $(this).val();
-//         $.ajax({
-//             url: "./Controllers/Add_To_Cart.php",
-//             method: "request",
-//             data: {product_id: product_id},
-//             success: function (data) {
-//                 $("#show_price").html(data);
-//                 $("#total_price").html(data);
-//             }
-//         });
-//     });
-// });
+$(document).ready(function () {
+    $("#product").change(function () {
+        let product_id = $(this).val();
+        $.ajax({
+            url: "./Controllers/Add_To_Cart.php",
+            method: "POST",
+            data: {
+                product_id: product_id},
+            success: function (data) {
+                $("#show_price").html(data);
+                $("#total_price").html(data);
+            }
+        });
+    });
+});
 
 
 // $("#product").click(function(selectProduct){
