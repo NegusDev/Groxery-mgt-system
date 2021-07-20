@@ -27,16 +27,15 @@ if (isset($_POST['del_id'])) {
 }
 
 if (isset($_POST['update'])) {
-    $id ='';
-    $data = [ 
-        'uom_name' => $_POST['uom_name']
-    ];
 
-    $result = $Service->updateService ($id,$data);
+    $uom_id = $_POST['id'];
+    $uom_name = $_POST['uom_name'];
+
+    $result = $Uom->updateUom($uom_id,$uom_name);
     if ($result) {
         echo "<script>alert('Updated Successfully')</script>";
         // RELOAD PAGE
-        header("location:./services.php");
+        header("location:./uom.php");
 
     } else {
         die('failed');

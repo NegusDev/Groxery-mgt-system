@@ -79,8 +79,7 @@ class Product extends DbController
 
     }
 
-    public function updateProduct($product_id = null,$product_name,$qty,$uom,$price)
-    {
+    public function updateProduct($product_id = null,$product_name,$qty,$uom,$price) {
         if ($this->conn != null) {
             if ($product_id != null) {
                 $sql = "UPDATE product 

@@ -36,9 +36,23 @@ class Uom extends Product
         }
         return $uom ?? [];
     }
+
+    //delete uom
     public function deleteUom($id) {
         $result = $this->conn->query("DELETE  FROM uom WHERE uom_id = $id") or die($this->conn->error);
         return $result;
+    }
+
+    public function updateUom($uom_id, $uom_name) {
+        if ($this->conn != null) {
+                $sql = "UPDATE uom SET `uom_name` = '$uom_name' WHERE `uom_id` = '$uom_id'";
+                $result = $this->conn->query($sql) or die($this->conn->error);
+                if ($result) {
+                    return true;
+                }
+        }
+        
+
     }
 
 }

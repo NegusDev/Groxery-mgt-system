@@ -3,11 +3,12 @@ if (isset($_POST['submit'])) {
     $data = array(
         'salesman_name' => $_POST['employee_name'],
         'salary' => $_POST['salary'],
-        'profile' => $_POST['image']
+        'profile' => $_FILES['image']['name']
     );
 
     $result =$Salesman->CreateEmployee('salesman', $data);
     if ($result) {
+        move_uploaded_file($_FILES['image']['tmp_name'], "img/$data");
         echo "<script>alert('Added New Employee')</script>";
         // RELOAD PAGE
         header("Location:" . $_SERVER['PHP_SELF']);
@@ -29,18 +30,16 @@ if (isset($_POST['del_id'])) {
 }
 
 if (isset($_POST['update'])) {
-    $id ='';
-    $data = [ 
-    'salesman_name' => $_POST['employee_name'],
-    'salary' => $_POST['salary'],
-    'profile' => $_POST['image']
-    ];
+    $salesman_id = $_POST['id'];
+    $salesman_name = $_POST['employee_name'];
+    $salary =  $_POST['salary'];
+    $profile =  $_FILES['image']['name'];
 
-    $result = $Service->updateService ($id,$data);
+    $result = $Salesman->updateEmployee($salesman_id, $salesman_name, $salary, $profile);
     if ($result) {
         echo "<script>alert('Updated Successfully')</script>";
         // RELOAD PAGE
-        header("location:./services.php");
+        header("location:./sales.php");
 
     } else {
         die('failed');

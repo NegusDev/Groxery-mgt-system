@@ -25,6 +25,7 @@ class Salesman extends DbController
         return $html;
     }
 
+    //  Add new employee
     public function CreateEmployee($table, $data) {
         //get columns
         $columns = implode(',', array_keys($data));
@@ -35,6 +36,7 @@ class Salesman extends DbController
         return $result;
     }
 
+    // get single employee
     public function getEmployeeById(int $salesman_id): array{
 
         $result = $this->conn->query("SELECT * FROM   `salesman` WHERE `salesman_id`=$salesman_id ") or die($this->conn->error);
@@ -52,14 +54,35 @@ class Salesman extends DbController
     return $this->conn->query( $sql);
     }
 
+    // get all employees info
     public function getEmployeeInfo($table,$username,$password) {
         $sql ="SELECT * FROM $table WHERE salesman_name= '$username' AND password= '$password' " or die($this->conn->error);
         return $this->conn->query( $sql);
     }
-
+    
+    // delete employee
     public function deleteEmployee($salesman_id) {
         $result = $this->conn->query("DELETE FROM salesman WHERE salesman_id = $salesman_id") or die($this->conn->error);
         return $result;
     }
+
+    //update employee info
+    public function updateEmployee($salesman_id, $salesman_name, $salary , $profile) {
+        if ($this->conn != null) {
+            if ($salesman_id != null) {
+                $sql = "UPDATE salesman 
+                        SET `salesman_name` ='$salesman_name', `salary` ='$salary', `profile` = '$profile'
+                        WHERE `salesman_id` = '$salesman_id' ";
+                $result = $this->conn->query($sql) or die($this->conn->error);
+                if ($result) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+        return false;
+    }
+
 
 }
