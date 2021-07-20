@@ -4,7 +4,7 @@ if (isset($_POST['submit'])) {
         'uom_name' => $_POST['uom_name']
     );
 
-    $result =$Salesman->CreateEmployee('uom', $data);
+    $result = $Salesman->CreateEmployee('uom', $data);
     if ($result) {
         echo "<script>alert('Added New Employee')</script>";
         // RELOAD PAGE

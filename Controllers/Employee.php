@@ -6,7 +6,7 @@ if (isset($_POST['submit'])) {
         'profile' => $_FILES['image']['name']
     );
 
-    $result =$Salesman->CreateEmployee('salesman', $data);
+    $result = $Salesman->CreateEmployee('salesman', $data);
     if ($result) {
         move_uploaded_file($_FILES['image']['tmp_name'], "img/$data");
         echo "<script>alert('Added New Employee')</script>";

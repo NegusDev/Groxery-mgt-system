@@ -72,7 +72,7 @@
             if (isset($_SESSION['admin'])) {
             $user = $_SESSION['admin'];  
             echo '
-            <div class="list-group fw-bold" style="height:90vh;">
+            <div class="list-group fw-bold bg-light" style="height:100%;">
                 <a href="index.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">Dashboard</a>
                 <a href="admin.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">'.$user.' profile</a>
                 <a href="sales.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">employees</a>

@@ -43,6 +43,7 @@ class Uom extends Product
         return $result;
     }
 
+    //edit uom
     public function updateUom($uom_id, $uom_name) {
         if ($this->conn != null) {
                 $sql = "UPDATE uom SET `uom_name` = '$uom_name' WHERE `uom_id` = '$uom_id'";
