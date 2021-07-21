@@ -24,45 +24,26 @@ $(document).on("click", ".remove-trow", function () {
     calculateValue();
 })
 
-$('#product').change( e =>{
-    let textvalues = displayData(e);
-    console.log(textvalues);
-})
-
-function displayData(e) {
-
-    let product_id = 0;
-    const td = $('tr .price,.total');
-    let textvalues = [];
-
-    for (const values of td) {
-        
-        if (values.dataset.id == e.target.dataset.id) {
-            textvalues[product_id++] = value.textContent;
-        }
-    }
-    
-}
 
 $('form #delete').click(function(){
     confirm("Are you sure");
 });
-// select box to fill price
-$(document).ready(function () {
+
     $("#product").change(function () {
         let product_id = $(this).val();
         $.ajax({
-            url: "./Controllers/Add_To_Cart.php",
-            method: "POST",
+            url: "./Controllers/Product.php",
+            method: "GET",
             data: {
                 product_id: product_id},
             success: function (data) {
-                $("#show_price").html(data);
+                $("#price").html(data);
                 $("#total_price").html(data);
+                $("#grand_total").html(data);
             }
         });
     });
-});
+
 
 
 // $("#product").click(function(selectProduct){

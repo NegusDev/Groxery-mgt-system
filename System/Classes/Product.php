@@ -96,10 +96,51 @@ class Product extends DbController
         }
         return false;
     }
+    //
     public function getTotalRows($table = 'admins') {
         $result = $this->conn->query("SELECT * FROM {$table}") or die($this->conn->error);
         $num = mysqli_num_rows( $result);
         return $num;
+    }
+
+    public function getProductPrice($product_id) {
+        if ($this->conn != null) {
+            $html = "";
+            $sql = "SELECT price_per_unit FROM product WHERE product_id = $product_id";
+            $result =  $this->conn->query($sql) or die($this->conn->error);
+            while ($price = mysqli_fetch_array($result)) {
+            //     $html .= '
+            //     <td class="my-1  product-price"><input type="number" id="price"  name="product-price"class="form-control price" 
+            //     value="'.$price['price_per_unit'].'"></td>
+            //     <td class="my-1 product-total">
+            //         <input type="number" name="product-total" id="total_price" class="d-inline form-control w-50 total"
+            //         value="'.$price['price_per_unit'].'">Shs
+            //         <!-- remove row -->
+            //         <button type="button" class="btn btn-danger ms-2 d-inline form-control w-25 remove-trow">
+            //             Remove
+            //         </button>
+            //     </td>
+            // </tr>
+            // </tbody>
+            // <tfoot>
+            // <tr>
+            //     <td></td>
+            //     <td></td>
+            //     <td></td>
+            //     <td>
+            //         <strong>Total</strong>
+            //         <input type="number" name="grand_total" id="grand_total" class="d-inline form-control w-50"
+            //         value="'.$price['price_per_unit'].'">Shs
+            //         <input type="submit" class="btn btn-success ms-2 d-inline form-control w-25" value="Save"
+            //                name="save">
+
+            //     </td>
+            // </tr>
+            // </tfoot>';
+            }
+           
+        }
+
     }
 
 

@@ -66,4 +66,11 @@ if (isset($_POST['del_id'])) {
 
 
 
+// if (isset($_POST['product_id'])) {
 
+//     if ($_POST['product_id'] != null) {
+
+//         $result = $Product->getProductPrice($_POST['product_id']) ?? 0;
+
+//     }
+// }

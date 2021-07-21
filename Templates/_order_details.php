@@ -40,18 +40,16 @@
                     <tbody id="tbody" class="product-box hidden">
                     <tr class="">
                         <td class="my-1 product_name">
-                            <select name="product_name" id="product_name" class="form-control text-center ">
+                            <select name="product_name" id="product" class="form-control text-center ">
                                 <?= $show['content']; ?>
                             </select>
                         </td>
                         <td class="my-1  product-qty"><input type="number" name="product-qty" data-id="" class="form-control" value=""></td>
-                        <td class="my-1  product-price"><input type="number" data-id="<?php foreach ($getlisting as $id) {
-                            echo $id['price_per_unit'];
-                        }  ?>" name="product-price"class="form-control price" value=""></td>
+                        <td class="my-1  product-price"><input type="number" id="price"  name="product-price"class="form-control price" 
+                        value=""></td>
                         <td class="my-1 product-total">
-                            <input type="number" name="product-total" data-id="<?php foreach ($getlisting as $id) {
-                            echo $id['price_per_unit'];
-                        }  ?>" class="d-inline form-control w-50 total">Shs
+                            <input type="number" name="product-total" id="total_price" class="d-inline form-control w-50 total"
+                            value="">Shs
                             <!-- remove row -->
                             <button type="button" class="btn btn-danger ms-2 d-inline form-control w-25 remove-trow">
                                 Remove
@@ -67,9 +65,9 @@
                         <td>
                             <strong>Total</strong>
                             <input type="number" name="grand_total" id="grand_total" class="d-inline form-control w-50"
-                                   value="">Shs
+                            value="">Shs
                             <input type="submit" class="btn btn-success ms-2 d-inline form-control w-25" value="Save"
-                                   name="save">
+                                name="save">
 
                         </td>
                     </tr>
@@ -82,3 +80,6 @@
         </div>
     </div>
 </section>
+
+<!-- 
+<-- <?= $price ?> --> 
