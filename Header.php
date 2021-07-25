@@ -20,11 +20,11 @@
                 echo '
                 <div class="mt-2">
                     <a href="index.php" class=" text-success"><i class="fas fa-home fa-2x pe-2"></i></a>
-                    <a href="order.php" class="text-danger"><i class="fas fa-th-list fa-2x"></i></a>
+                    <a href="../order.php" class="text-danger"><i class="fas fa-th-list fa-2x"></i></a>
                 </div>
                 <ul class="nav list-unstyled">
                         <li class="nav-item">
-                            <a href="" class="nav-link text-capitalize"><i class="fas fa-user-astronaut fa-2x icon"></i> '.$user.'</a>
+                            <a href="" class="nav-link text-capitalize"><i class="fas fa-user-astronaut fa-2x icon"></i> ' .$user.'</a>
                         </li>
                         <li class="nav-item">
                             <a href="./logout.php" class="nav-link text-capitalize"><i class="fas fa-sign-out-alt fa-2x icon"></i> Log Out</a>
@@ -36,12 +36,12 @@
 
                 echo '
                 <div class="mt-2">
-                    <a href="index.php" class=" text-success"><i class="fas fa-home fa-2x pe-2"></i></a>
+                    <a href="sales.php" class=" text-success"><i class="fas fa-home fa-2x pe-2"></i></a>
                     <a href="order.php" class="text-danger"><i class="fas fa-th-list fa-2x"></i></a>
                 </div>
                 <ul class="nav list-unstyled">
                     <li class="nav-item">
-                       <a href="" class="nav-link text-capitalize"><i class="fas fa-user fa-2x icon"></i> '.$mm.'</a>
+                       <a href="" class="nav-link text-capitalize"><i class="fas fa-user fa-2x icon"></i> ' .$mm.'</a>
                    </li>
                     <li class="nav-item">
                         <a href="logout_employee.php" class="nav-link text-capitalize"><i class="fas fa-sign-out-alt fa-2x icon"></i> Log Out</a>
@@ -74,7 +74,7 @@
             echo '
             <div class="list-group fw-bold bg-light" style="height:100%;">
                 <a href="index.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">Dashboard</a>
-                <a href="admin.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">'.$user.' profile</a>
+                <a href="admin.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">' .$user.' profile</a>
                 <a href="sales.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">employees</a>
                 <a href="product.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">Products</a>
                 <a href="order_details.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">order lists</a>
@@ -92,7 +92,7 @@
             }else {
                 echo '
                 <div class="list-group bg-light fw-bold" style="height:90vh;">
-                    <a href="adminlogin.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark">Login for Admins only</a>
+                    <a href="index.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark">Login for Admins only</a>
                     <a href="employee_login.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark">Login for employees</a>
                 </div> 
                 ';

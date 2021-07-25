@@ -13,7 +13,7 @@ if (isset($_POST['login'])) {
 
             $_SESSION['salesman'] = $_POST['employee_name'];
 
-            header("Location:index.php");
+            header("Location:sales.php");
             exit();
 
         }else {
