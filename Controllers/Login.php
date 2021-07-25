@@ -5,7 +5,7 @@ if (isset($_POST['login'])) {
 
     $username = $_POST['username'];
     $password =$_POST['password'];
-    $pass = hash('sha256',$password);
+//    $pass = hash('sha256',$password);
 
     $result = $Salesman->getAdminInfo( 'admin',$username,$password);
     if ($result) {
