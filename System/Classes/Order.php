@@ -22,7 +22,7 @@ class Order extends DbController
         foreach ($orders as $order) {
             $html .= '
                 <tr>
-                    <td class="text-capitalize">' . substr($order['datetime'], 0,16) . '</td>
+                    <td class="text-capitalize">' . date('F j h:m', strtotime($order['datetime'] )) . '</td>
                     <td class="text-capitalize">' . $order['order_id'] . '</td>
                     <td class="text-capitalize">' . $order['customer'] . '</td>
                     <td class="text-capitalize">' . $order['total'] . ' Ugx</td>                      

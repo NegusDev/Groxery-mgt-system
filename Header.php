@@ -36,7 +36,7 @@
 
                 echo '
                 <div class="mt-2">
-                    <a href="sales.php" class=" text-success"><i class="fas fa-home fa-2x pe-2"></i></a>
+                    <a href="sales.php" class=" text-success"><i class="fas fa-homeh fa-2x pe-2"></i></a>
                     <a href="order.php" class="text-danger"><i class="fas fa-th-list fa-2x"></i></a>
                 </div>
                 <ul class="nav list-unstyled">
@@ -52,7 +52,7 @@
             } else {
                 echo ' 
                 <div class="m-auto ">
-                        <h2 class="nav-link text-capitalize">Negus Stores</h2>
+                        <h2 class="nav-link text-capitalize bol">Negus Stores</h2>
                  </div> 
                     
                 ';
@@ -85,10 +85,7 @@
             }elseif (isset($_SESSION['salesman'])) {
                 $emp = $_SESSION['salesman'];
                 echo '
-            <div class="list-group bg-light fw-bold" style="height:100vh;">
-                <a href="admin.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">'.$emp.' profile</a>
-                <a href="product.php" class="list-group-item list-group-item-primary text-capitalize py-3 text-dark ">Products</a>
-            </div>';
+           ';
             }else {
                 echo '
                 <div class="list-group bg-light fw-bold" style="height:90vh;">
