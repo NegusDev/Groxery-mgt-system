@@ -9,7 +9,7 @@
                             <h5 class="pb-5">Admins</h5>
                         </div>
                         <div class="col-md-4 mt-5">
-                           <a href="./admin.php"> <i class="fa fa-users-cog fa-2x my-3 "></i></a>
+                           <a href="./admin.php"> <i class="fa fa-thumbs fa-2x my-3 "></i></a>
                         </div>
                     </div>
                 </div>

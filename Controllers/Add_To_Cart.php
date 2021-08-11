@@ -12,7 +12,7 @@ if (isset($_POST['save'])) {
     ];
     $params = [
         // here in this array 
-        // "order_id" => $data['order_id'],
+         "order_id" => $data['order_id'],
         // end
         "product_id" => (int)$_POST['product_name'],
         "quantity" => (float)$_POST['product-qty'],
