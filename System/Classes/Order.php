@@ -36,10 +36,11 @@ class Order extends DbController
     // get total amount
 
     public function getTotalAmount() {
-        $sql = "SELECT sum(total) AS profit FROM orders";
+        $sql = "SELECT sum(total) AS Total FROM orders";
         $result = $this->conn->query($sql);
         $row= mysqli_fetch_array($result);
-        $total = $row['profit'];
+        $total = $row['Total'];
+        echo $total;
     }
 
     public function insertIntoOrder($table = 'orders', $data)

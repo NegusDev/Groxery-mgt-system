@@ -9,6 +9,7 @@ $details_rows = $Product-> getTotalRows($table = 'order_details');
 $order_rows = $Product-> getTotalRows($table = 'orders');
 $uom_rows = $Product-> getTotalRows($table = 'uom');
 
+
 $View->header();
 
 include('../Templates/_dashboard.php');

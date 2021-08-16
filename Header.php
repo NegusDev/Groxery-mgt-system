@@ -37,7 +37,7 @@
                 echo '
                 <div class="mt-2">
                     <a href="sales.php" class=" text-success"><i class="fas fa-homeh fa-2x pe-2"></i></a>
-                    <a href="order.php" class="text-danger"><i class="fas fa-th-list fa-2x"></i></a>
+                    <a href="sales.php" class="text-danger"><i class="fas fa-th-list fa-2x"></i></a>
                 </div>
                 <ul class="nav list-unstyled">
                     <li class="nav-item">

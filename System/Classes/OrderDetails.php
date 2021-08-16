@@ -40,13 +40,10 @@ class OrderDetails extends Product
         return $html;
     }
 
-    public function insertIntoOrderDetails($table = 'order_details', $data)
+    public function insertIntoOrderDetails($table = 'order_details', $order_id,$product_id,$quantity,$total)
     {
-        //get columns
-        $columns = implode(',', array_keys($data));
-        $values = "'" . implode("','", array_values($data)) . "'";
-
-        $sql = sprintf("INSERT INTO %s(%s) VALUES(%s)", $table, $columns, $values);
+       $sql = "INSERT INTO {$table}(order_id,product_id,quantity,total) SELECT 
+                {$order_id} FROM orders VALUES('$order_id', '$product_id','$quantity','$total');";
         $result = $this->conn->multi_query($sql) or die($this->conn->error);
         return $result;
 
@@ -62,7 +59,7 @@ class OrderDetails extends Product
 		return $resultArray;
     }
     public function deleteOrder($id) {
-        $result = $this->conn->query("DELETE  FROM order_details WHERE order_id = $id") or die($this->conn->error);
+        $result = $this->conn->query("DELETE  FROM orders WHERE order_id = $id") or die($this->conn->error);
         return $result;
     }
 

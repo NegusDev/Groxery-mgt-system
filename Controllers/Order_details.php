@@ -2,7 +2,9 @@
 
 //delete
 if (isset($_POST['del_id'])) {
+
     $del_id = $_POST['del_id'];
+    
     if ($OrderDetails->deleteOrder($del_id)) {
        echo "deleted";
         // RELOAD PAGE

@@ -83,8 +83,8 @@
                 <div class="box-content bg-danger">
                     <div class="row">
                         <div class="col-md-8 mt-5  px-4">
-                            <h5 class="">0</h5>
-                            <h5 class="pb-5" >Total Profit</h5>
+                            <h5 class="">UGX <?php  $Order->getTotalAmount(); ?></h5>
+                            <h5 class="pb-5" >Total Revenue</h5>
                         </div>
                         <div class="col-md-4 mt-5">
                            <a href=""><i class="fas fa-money-bill fa-2x my-3 ad-icon"></i></a>
