@@ -14,13 +14,14 @@ if (isset($_POST['save'])) {
     $order_id = $_GET['order_id'];
     $prodct_id = $_POST['product_name']; 
     $quantity = $_POST['product-qty']; 
-    $total = $_POST['product-total']; 
+    $price = $_POST['product-price']; 
+    $total = $quantity * $price; 
 
 //    print_r($data);
 //    print_r($params);
 
     $result = $Order->insertIntoOrder('orders', $data);
-    $result_details = $OrderDetails->insertIntoOrderDetails('order_details',  $order_id,$product_id,$quantity,$total);
+    $result_details = $OrderDetails->insertIntoOrderDetails('order_details',  $order_id,$product_id,$quantity,$price,$total);
     if ($result && $result_details) {
         // RELOAD PAGE
         header("Location:" . $_SERVER['PHP_SELF']);
