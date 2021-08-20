@@ -32,8 +32,8 @@ $('form #delete').click(function(){
     $("#product").change(function () {
         let product_id = $(this).val();
         $.ajax({
-            url: "./Controllers/Product.php",
-            method: "GET",
+            url: "./Product.php",
+            method: "POST",
             data: {
                 product_id: product_id},
             success: function (data) {
