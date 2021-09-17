@@ -31,7 +31,7 @@ class OrderDetails extends Product
     // Select product
     public function showProduct(array $products): string
     {
-        $html = '<option value="" selected disabled  class="text-center">--Select--</option>';
+        $html = '<option value="" class="text-center">--Select--</option>';
         foreach ($products as $product) {
             $html .= '
             <option value="' . $product['product_id'] . '" data-price="'. $product['price_per_unit'] .'">' . $product['product_name'] . '</option>
