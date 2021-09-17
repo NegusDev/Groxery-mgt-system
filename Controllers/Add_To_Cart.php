@@ -4,14 +4,14 @@
 if (isset($_POST['save'])) {
     $data = [
         // i want to access to access the array value in the order_id array key which is on null see line 15
-        "order_id" => 39,
+        "order_id" => NULL,
         // end
         "customer" => $_POST['customer'],
         "total" => $_POST['grand_total'],
         // "datetime" => date('Y-m-d H:i:s')
     ];
     
-    $order_id = $_GET['order_id'];
+    $order_id = $data['order_id'];
     $prodct_id = $_POST['product_name']; 
     $quantity = $_POST['product-qty']; 
     $price = $_POST['product-price']; 

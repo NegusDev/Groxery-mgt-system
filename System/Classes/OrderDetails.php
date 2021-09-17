@@ -34,7 +34,7 @@ class OrderDetails extends Product
         $html = '<option value="" selected disabled  class="text-center">--Select--</option>';
         foreach ($products as $product) {
             $html .= '
-            <option value="' . $product['product_id'] . '">' . $product['product_name'] . '</option>
+            <option value="' . $product['product_id'] . '" data-price="'. $product['price_per_unit'] .'">' . $product['product_name'] . '</option>
         ';
         }
         return $html;

@@ -45,7 +45,7 @@
                             </select>
                         </td>
                         <td class="my-1  product-qty"><input type="number" name="product-qty" data-id="" class="form-control" value=""></td>
-                        <td class="my-1  product-price"><input type="number" id="price"  name="product-price"class="form-control price" 
+                        <td class="my-1  product-price"><input type="number" id="product_price"  name="product-price"class="form-control price" 
                         value=""></td>
                         <td class="my-1 product-total">
                             <input type="number" name="product-total" id="total_price" class="d-inline form-control w-50 total"

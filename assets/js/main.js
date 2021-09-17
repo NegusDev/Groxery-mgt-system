@@ -29,20 +29,25 @@ $('form #delete').click(function(){
     confirm("Are you sure");
 });
 
-    $("#product").change(function () {
-        let product_id = $(this).val();
-        $.ajax({
-            url: "./Product.php",
-            method: "POST",
-            data: {
-                product_id: product_id},
-            success: function (data) {
-                $("#price").html(data);
-                $("#total_price").html(data);
-                $("#grand_total").html(data);
-            }
-        });
+    $("#product").change( function() {
+        // let textValue = displayPrice(e);
+        let productId = $("option").val();
+        console.log(productId);
+      
     });
+
+    // function displayPrice(e){
+        
+    //     let product_price = 0;
+    //     const tdPrice = $("product_price");
+    //     let textValue = [];
+
+    //     for (const value of tdPrice){
+    //         if(value.dataset.price == e.target.dataset.price){
+    //            textvalue[product_price++] = value.textContent;
+    //         }
+    //      } return textValue;
+    // }
 
 
 
