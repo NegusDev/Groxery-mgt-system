@@ -9,27 +9,26 @@ function calculateValue() {
             }
             
         });
-
+        
     $('#grand-total').val(total);
 }
 
 
 $(document).ready(function () {
     
-    $("#addMore").click(ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooofunction () {
-        let trows = $(".product-box").h                                                                                                                                                                                                                                                              nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnncccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccclllllllll                                                            kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkl/.tml();
-                                                                                                                                                
-        $(".product-box-extra").append(trows);
-        $(".product-box-extra .remove-trow").last().removeClass('hideit');
-        $(".product-box-extra .product-qty").last();
-        $(".product-box-extra .product-price").last();
-        $(".product-box-extra .product-total").last();
-    });
+    // $("#addMore").click(function () {
+    //     let trows = $(".product-box").html();
+    //     $(".product-box-extra").append(trows);
+    //     $(".product-box-extra .remove-trow").last().removeClass('hideit');
+    //     $(".product-box-extra .product-qty").last();
+    //     $(".product-box-extra .product-price").last();
+    //     $(".product-box-extra .product-total").last();
+    // });
     
-    $(document).on("click", ".remove-trow", function () {
-        $(this).closest('tr').remove();
-        calculateValue();
-    })
+    // $(document).on("click", ".remove-trow", function () {
+    //     $(this).closest('tr').remove();
+    //     calculateValue();
+    // })
     
     
     $('body')

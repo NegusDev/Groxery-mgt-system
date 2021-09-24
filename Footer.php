@@ -1,7 +1,7 @@
 </div>
 </main>
 <!-- ! footer section -->
-<footer>
+<footer class="footer">
     <div class="copyright text-center bg-dark text-white py-2">
         <p class="font-berkshire font-size-12">&copy; Copyright 2021. Made By <a href=""
                                                                                  class="color-secondary">Negus</a></p>
