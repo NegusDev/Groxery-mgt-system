@@ -13,23 +13,21 @@
                             <div class="my-2">
                                 <label><strong>Customer Name</strong></label>
                                     <div class="input-group mb-2">
-                                        <input type="text" name="customer" class="form-control">
+                                        <input type="text" name="customer" class="form-control" required>
                                         <input type="hidden" name="order_id" class="form-control">
                                     </div>
                                 </div>
                         </div>
                     </div>
                     <hr class="m-0">
-                    <table class="table table-striped table-primary  table-bordered table-hover">
+                    <table class="table table-striped table-primary  table-bordered table-hover mt-2">
                         <thead class="thead-danger">
                         <tr>
                             <th><label for="">Name</label></th>
                             <th><label for="">Quantity</label></th>
                             <th><label for="">Price</label></th>
                             <th><label for="">Total Amount</label></th>
-                            <div class="d-flex justify-content-end my-2">
-                                <button type="button" class="btn btn-primary" id="addMore">Add More</button>
-                            </div>
+        
 
                         </tr>
 
@@ -49,7 +47,7 @@
                             value=""></td>
                             <td class="my-1 product-total">
                                 <div class="input-group w-50 float-start">
-                                    <input type="number" name="product-total" id="product-total" class="form-control" value="">
+                                    <input type="number" name="product-total" id="product-total" class="form-control total" value="">
                                     <div class="input-group-text">UGX</div>
                                 </div>
                                 <!-- remove row -->
@@ -62,33 +60,40 @@
                        
 
                     </table>
-                </form>
-                <div class="table-responsive">
+                    <div class="table-responsive d-flex">
                     <table id="shopping-cart" class="table table-bordered table-striped table-hover">
-                        <thead><tr><th>Product</th><th>QTY</th><th>Price</th><th>Total</th></tr></thead>
-                        <tbody></tbody>
-                        <tfoot>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <div class="input-group w-50 float-start">
-                                    <input type="number" name="grand-total" id="grand-total" class="form-control " value="">
-                                    <div class="input-group-text">UGX</div>
-                                </div>
-                                <input type="submit" class="btn btn-success ms-2 d-inline form-control w-25" value="Make sale"
-                                    name="save">
-
-                            </td>
-                        </tr>
-                        </tfoot>
+                        <thead>
+                            <tr class="text-center">
+                                <th>Product</th>
+                                <th>Qty</th>
+                                <th>Price</th>
+                                <th>Total</th>
+                                <th>Remove from cart</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody"></tbody>
+                       
                     </table>
+                    
                 </div>
+                <div class="row d-flex align-items-end justify-content-end">
+                    <div class="col-6 mb-2">
+                    <div class="input-group w-50 float-start">
+                    <input type="number" name="grand_total" id="grand-total" class="form-control " value="0" readonly>
+                    <div class="input-group-text">UGX</div>
+                    </div>
+                    <input type="submit" class="btn btn-success ms-2 d-inline form-control w-25" value="Make sale"
+                    name="save">
+                    </div>
+                    </div>
+                </div>
+                </form>
+                
+                
             </div>
         </div>
     </div>
 </section>
 
-<!-- 
-<-- <?= $price ?> --> 
+
+

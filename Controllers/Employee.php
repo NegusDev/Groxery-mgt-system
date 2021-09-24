@@ -1,4 +1,9 @@
 <?php
+if (!isset($_SESSION['admin'])) {
+    header("locstion:./")
+} else {
+
+}
 if (isset($_POST['submit'])) {
     $data = array(
         'salesman_name' => $_POST['employee_name'],
