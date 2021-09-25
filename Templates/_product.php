@@ -20,9 +20,9 @@
                         <thead class="thead-danger">
                         <tr>
                             <th>Name</th>
-                            <th>Number of Products</th>
+                            <th>Stock</th>
                             <th>Unit</th>
-                            <th>Price Per Unit</th>
+                            <th>Selling Price</th>
                             <th>Action</th>
                         </tr>
 

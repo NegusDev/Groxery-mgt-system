@@ -5,8 +5,8 @@ declare(strict_types=1);
  * @var View $View
  */
 
-include('Config.php');
-include('Controllers/Delete_product.php');
+include('../Config.php');
+include('../Controllers/Product.php');
 
 $product_id = (int)$_GET['product'];
 $product = $Product->getProductById($product_id);
@@ -14,5 +14,5 @@ $product = $Product->getProductById($product_id);
 // $result = $Product->deleteProduct(23);
 
 $View->header();
-include('Templates/_delete_product.php');
+include('../Templates/_delete_product.php');
 $View->footer();

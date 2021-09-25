@@ -6,8 +6,8 @@ ob_start();
  * @var View $View
  */
 
-include('Config.php');
-include('Controllers/Product.php');
+include('../Config.php');
+include('../Controllers/Product.php');
 
 
 $product_id = (int)$_GET['update'];
@@ -18,5 +18,5 @@ $page['content'] = $Uom->ShowUom($get);
 
 
 $View->header();
-include('Templates/_update_product.php');
+include('../Templates/_update_product.php');
 $View->footer();

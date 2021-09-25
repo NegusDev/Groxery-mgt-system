@@ -17,7 +17,21 @@
                            class="px-3 my-2 d-inline border-end border-start text-black btn btn-primary">New Order</a>
                     </div>
                 </div>
-
+                <div class="row justify-content-center ">
+                <div class="col-md-4 mt-2 mb-4">
+                <div class=" shadow-lg" style="border-radius:22px; background:linear-gradient(to right ,#c0cccc,#c0cccc); ">
+                    <div class="row">
+                        <div class="col-md-8 mt-5  px-4 ">
+                            <h5 class="">UGX  <?php  $Order->ShowTotalBySession($_SESSION['salesman']); ?></h5>
+                            <h5 class="pb-5 text-capitalize w-50" >Total Sales By you</h5>
+                        </div>
+                        <div class="col-md-4 mt-5">
+                           <a href=""><i class="fas fa-money-bill fa-2x my-3 ad-icon"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                </div>
                 <div class="table-data">
                     <table class="table table-striped table-primary  table-bordered table-hover">
                         <thead class="thead-danger">
@@ -27,6 +41,7 @@
                             <th>Customer Name</th>
                             <th>Total Cost</th>
                         </tr>
+                        
 
                         </thead>
                         <?=

@@ -21,7 +21,7 @@ if (!empty($_POST['submit'])) {
     }
 
     if ($errors === "") {
-        $result = $Product->createProduct('product', $data);
+        $result = $Product->createProduct('product_stock', $data);
         if ($result) {
             $errors = "Product Added Successfully";
             // RELOAD PAGE

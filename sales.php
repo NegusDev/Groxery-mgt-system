@@ -3,7 +3,7 @@ session_start();
 require_once('Config.php');
 //  echo "\u{1F648}"; emojii
 
-$getOrders = $Order->getAllOrders();
+$getOrders = $Order->getAllOrders($_SESSION['salesman']);
 $page['content'] = $Order->viewAllOrders($getOrders);
 
 $View->header();

@@ -3,9 +3,9 @@
 class Order extends DbController
 {
 
-    public function getAllOrders()
+    public function getAllOrders( $session)
     {
-        $sql = "SELECT * FROM orders ORDER BY datetime DESC";
+        $sql = "SELECT * FROM orders WHERE sold_by = '$session' ORDER BY datetime DESC";
         $result = $this->conn->query($sql) or die($this->conn->error);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
@@ -43,6 +43,16 @@ class Order extends DbController
         echo $total;
     }
 
+     // get total amount by an individual
+
+     public function ShowTotalBySession($sold) {
+        $sql = "SELECT sum(total) AS Total FROM orders WHERE sold_by = '$sold'";
+        $result = $this->conn->query($sql);
+        $row= mysqli_fetch_array($result);
+        $total = $row['Total'];
+        echo $total;
+    }
+
     public function insertIntoOrder($table = 'orders', $order,$products)
     {
         $this->conn->begin_transaction();
@@ -54,13 +64,30 @@ class Order extends DbController
         $sql = sprintf("INSERT INTO %s(%s) VALUES(%s)", $table, $columns, $values);
         $result = $this->conn->query($sql) or die($this->conn->error);
         $order_id = $this->conn->insert_id;
-        //what goes below herer
-        // $products = [];
+
         $queries = [];
         foreach ($products as $product) {
             $queries[] = "INSERT INTO order_details(order_id,product_id,quantity,total_price   ) 
                         VALUES({$order_id},{$product['product_id']},{$product['qty']},{$product['total_price']})";
         }
+
+        // DECREASE STOCK
+        foreach ($products as $product) {
+            $queries[] = "UPDATE product_stock 
+                        SET `number_of_produt` = number_of_produt - {$product['qty']}
+                        WHERE product_id = {$product['product_id']} LIMIT 1;";
+        }
+
+         // CHECK IF NUMBER OF STOCK IS LESS THAN QUANTITY
+        // foreach ($products as $product) {
+        //     $queries[] = "SELECT * FROM `product_stock` WHERE ";
+        //     if ( 'number_of_produt' > $product['qty']) {
+        //         $queries[] .= "AND product_id = {$product['product_id']} LIMIT 1;";
+        //     }
+        //     print_r($queries);
+            
+        // }
+
         
         foreach ($queries as $query) {
             $this->conn->query($query) or die($this->conn->error);

@@ -4,8 +4,8 @@ class OrderDetails extends Product
 {
     public function getOrderDetails()
     {
-        $sql = "SELECT order_details.* , orders.order_id, product.product_id FROM order_details
-        INNER JOIN orders  ON order_details.order_id = orders.order_id JOIN product ON order_details.product_id = product.product_name";
+        $sql = "SELECT order_details.* , orders.order_id, product_stock.product_id FROM order_details
+        INNER JOIN orders  ON order_details.order_id = orders.order_id JOIN product ON order_details.product_id = product_stock.product_name";
         $result = $this->conn->query($sql) or die($this->conn->error);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
@@ -15,7 +15,7 @@ class OrderDetails extends Product
         }
     }
 
-    public function getProduct($table = 'product')
+    public function getProduct($table = 'product_stock')
     {
         $sql = "SELECT * FROM  $table";
         $result = $this->conn->query($sql);

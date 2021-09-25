@@ -8,6 +8,7 @@ if (!isset($_SESSION['salesman']))  {
 
         $order = [
             "customer" => $_POST['customer'],
+            "sold_by" => $_SESSION['salesman'],
             "total" => $_POST['grand_total']
         ];
         

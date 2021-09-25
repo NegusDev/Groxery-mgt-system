@@ -1,13 +1,14 @@
 <?php
 
-class Product extends DbController
-{
+class Product extends DbController {
+
+    public string $product_stock = 'product_stock';
 
     public function getAllProducts()
     {
 
-        $sql = "SELECT product.* , uom.uom_name FROM product
-                INNER JOIN uom ON product.uom_id = uom.uom_id";
+        $sql = "SELECT product_stock.* , uom.uom_name FROM product_stock
+                INNER JOIN uom ON product_stock.uom_id = uom.uom_id";
         $result = $this->conn->query($sql) or die($this->conn->error);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
@@ -31,7 +32,11 @@ class Product extends DbController
                             <td  class="text-capitalize">' . $product['price_per_unit'] . '</td>
                             <td class=""> 
                              <a href="updateProduct.php?update=' . $product['product_id'] . '" class="btn btn-success">Update</a> 
-                             <a href="deleteProduct.php?product=' . $product['product_id'] . '" class="btn btn-danger">Delete</a> 
+                             <form class="d-inline-block">
+                                <input type="hidden" name="del_id" value="'.$product['product_id'].'">
+                                <input type="submit" class="btn btn-danger" Value="Delete">
+                             </form>
+                    
                             </td>                       
                     </tr>
                 ';
@@ -44,7 +49,7 @@ class Product extends DbController
     public function getProductById(int $product_id): array
     {
 
-        $result = $this->conn->query("SELECT * FROM   `product` WHERE `product_id`=$product_id ") or die($this->conn->error);
+        $result = $this->conn->query("SELECT * FROM   `product_stock` WHERE `product_id`=$product_id ") or die($this->conn->error);
         //      While loop for fetching product data one by one
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
@@ -65,7 +70,7 @@ class Product extends DbController
         return $result;
     }
 
-    public function deleteProduct($product_id = null, $table = 'product') {
+    public function deleteProduct($product_id = null, $table = 'product_stock') {
         if ($this->conn != null) {
             if ($product_id != null) {
                 $result = $this->conn->query("DELETE FROM $table WHERE product_id = $product_id") or die($this->conn->error);
@@ -82,7 +87,7 @@ class Product extends DbController
     public function updateProduct($product_id = null,$product_name,$qty,$uom,$price) {
         if ($this->conn != null) {
             if ($product_id != null) {
-                $sql = "UPDATE product 
+                $sql = "UPDATE product_stock 
                         SET `product_name` ='$product_name', `number_of_produt` ='$qty' ,  `uom_id` = '$uom', `price_per_unit` = '$price'
                         WHERE `product_id` = '$product_id' ";
                 $result = $this->conn->query($sql) or die($this->conn->error);

@@ -56,7 +56,7 @@ class Salesman extends DbController
 
     // get all employees info
     public function getEmployeeInfo($table,$username,$password) {
-        $sql ="SELECT * FROM $table WHERE salesman_name= '$username' AND password= '$password' " or die($this->conn->error);
+        $sql ="SELECT * FROM $table WHERE salesman_name= '$username' AND password = '$password' " or die($this->conn->error);
         return $this->conn->query( $sql);
     }
     
