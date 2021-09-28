@@ -12,6 +12,6 @@ $page['content'] = $Product->viewAllProducts($getproducts);
 $get = $Uom->getUom('uom');
 $show['content'] = $Uom->ShowUom($get);
 
-$View->header();
+include("Header.php");
 include('../Templates/_admin_product.php');
-$View->footer();
+include("Footer.php");

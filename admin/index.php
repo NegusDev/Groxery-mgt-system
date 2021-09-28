@@ -10,8 +10,9 @@ $order_rows = $Product-> getTotalRows($table = 'orders');
 $uom_rows = $Product-> getTotalRows($table = 'uom');
 
 
-$View->header();
+include("Header.php");
+    
 
 include('../Templates/_dashboard.php');
 
-$View->footer();
+include("footer.php");

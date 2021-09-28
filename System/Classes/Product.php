@@ -32,7 +32,7 @@ class Product extends DbController {
                             <td  class="text-capitalize">' . $product['price_per_unit'] . '</td>
                             <td class=""> 
                              <a href="updateProduct.php?update=' . $product['product_id'] . '" class="btn btn-success">Update</a> 
-                             <form class="d-inline-block">
+                             <form method="post" class="d-inline-block delete-form">
                                 <input type="hidden" name="del_id" value="'.$product['product_id'].'">
                                 <input type="submit" class="btn btn-danger" Value="Delete">
                              </form>

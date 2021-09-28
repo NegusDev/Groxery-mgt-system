@@ -6,6 +6,6 @@ require_once('../Controllers/Order_details.php');
 
 $orders = $OrderDetails->getOrders();
 
-$View->header();
+include("Header.php");
 include('../Templates/_admin_order_details.php');
-$View->footer();
+include("Footer.php");

@@ -7,6 +7,6 @@ require_once('../Controllers/Employee.php');
 $getusers = $Salesman->getSalesman();
 
 
-$View->header();
+include("Header.php");
 include('../Templates/_admin_sales.php');
-$View->footer();
+include("Footer.php");
