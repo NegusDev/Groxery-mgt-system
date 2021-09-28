@@ -70,10 +70,10 @@ class Product extends DbController {
         return $result;
     }
 
-    public function deleteProduct($product_id = null, $table = 'product_stock') {
+    public function deleteProduct($product_id = null) {
         if ($this->conn != null) {
             if ($product_id != null) {
-                $result = $this->conn->query("DELETE FROM $table WHERE product_id = $product_id") or die($this->conn->error);
+                $result = $this->conn->query("DELETE FROM `product_stock` WHERE product_id = $product_id") or die($this->conn->error);
                 if ($result) {
                     // RELOAD PAGE
                     header("Location:" . $_SERVER['PHP_SELF']);

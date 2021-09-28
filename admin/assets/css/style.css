@@ -70,3 +70,9 @@
 .box-content {
 	border-radius: 22px;
 }
+.content {
+	flex:1 0 auto;
+}
+.footer {
+	flex-shrink: 0;
+}

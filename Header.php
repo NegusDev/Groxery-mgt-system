@@ -27,7 +27,7 @@
                             <a href="" class="nav-link text-capitalize"><i class="fas fa-user-astronaut fa-2x icon"></i> ' .$user.'</a>
                         </li>
                         <li class="nav-item">
-                            <a href="./admin/logout.php" class="nav-link text-capitalize"><i class="fas fa-sign-out-alt fa-2x icon"></i> Log Out</a>
+                            <a href="./logout.php" class="nav-link text-capitalize"><i class="fas fa-sign-out-alt fa-2x icon"></i> Log Out</a>
                         </li>
                         </ul>';
              }elseif (isset($_SESSION['salesman'])) {

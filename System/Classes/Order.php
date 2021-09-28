@@ -3,16 +3,26 @@
 class Order extends DbController
 {
 
-    public function getAllOrders( $session)
+    public function getAllOrders()
     {
-        $sql = "SELECT * FROM orders WHERE sold_by = '$session' ORDER BY datetime DESC";
+        $sql = "SELECT * FROM orders  ORDER BY datetime DESC";
         $result = $this->conn->query($sql) or die($this->conn->error);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $orders[] = $row;
             }
             return $orders;
+        }else {
+            $html .="
+            <tr>
+                
+            <td colspan='10' class='text-center'>No of Job requests Yet.</td>
+            
+            </tr>
+        
+        ";
         }
+        return $html;
 
     }
 

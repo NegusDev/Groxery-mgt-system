@@ -55,7 +55,7 @@ if (isset($_POST['update'])) {
 //delete product
 if (isset($_POST['del_id'])) {
     $del_id = $_POST['del_id'];
-    if ($Product->deleteProduct($del_id,'product')) {
+    if ($Product->deleteProduct($del_id)) {
        echo "deleted";
         // RELOAD PAGE
         header("Location:" . $_SERVER['PHP_SELF']);
@@ -63,14 +63,3 @@ if (isset($_POST['del_id'])) {
         die('failed');
     }
 }
-
-
-
-// if (isset($_POST['product_id'])) {
-
-//     if ($_POST['product_id'] != null) {
-
-//         $result = $Product->getProductPrice($_POST['product_id']) ?? 0;
-
-//     }
-// }
