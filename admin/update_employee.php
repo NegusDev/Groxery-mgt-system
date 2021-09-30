@@ -9,6 +9,6 @@ $id = $Salesman->getEmployeeById($employee_id);
 
 
 
-$View->header();
+include("Header.php");
 include('../Templates/_update_employee.php');
-$View->footer();
+include("Footer.php");

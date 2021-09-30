@@ -8,6 +8,6 @@ $uom_id = (int)$_GET['id'];
 $id = $Uom->getUomById($uom_id);
 
 
-$View->header();
+include("Header.php");
 include('../Templates/_update_uom.php');
-$View->footer();
+include("Footer.php");

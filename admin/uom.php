@@ -5,6 +5,6 @@ require_once('../Controllers/Uom.php');
 
 $getuoms = $Uom->getUom('uom');
 
-$View->header();
+include("Header.php");
 include('../Templates/_uom.php');
-$View->footer();
+include("Footer.php");

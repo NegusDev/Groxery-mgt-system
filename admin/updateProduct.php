@@ -3,7 +3,6 @@ session_Start();
 ob_start();
 /**
  * @var Product $Product
- * @var View $View
  */
 
 include('../Config.php');
@@ -17,6 +16,6 @@ $get = $Uom->getUom('uom');
 $page['content'] = $Uom->ShowUom($get);
 
 
-$View->header();
+include("Header.php");
 include('../Templates/_update_product.php');
-$View->footer();
+include("Footer.php");
