@@ -11,35 +11,35 @@ class Order extends DbController
             while ($row = $result->fetch_assoc()) {
                 $orders[] = $row;
             }
-            return $orders;
-        }else {
-            $html .="
-            <tr>
-                
-            <td colspan='10' class='text-center'>No of Job requests Yet.</td>
             
-            </tr>
-        
-        ";
         }
-        return $html;
-
+        return $orders ?? [] ;
     }
 
     public function viewAllOrders(array $orders): string
     {
         $html = '<tbody id="tbody">';
-        foreach ($orders as $order) {
+        if (empty($orders)) {
             $html .= '
                 <tr>
-                    <td class="text-capitalize">' . date('F j h:m', strtotime($order['datetime'] )) . '</td>
-                    <td class="text-capitalize">' . $order['order_id'] . '</td>
-                    <td class="text-capitalize">' . $order['customer'] . '</td>
-                    <td class="text-capitalize">' . $order['total'] . ' Ugx</td>                      
+                    <td colspan="12" class="text-center">No orders made yet</td>
                 </tr>
             ';
         }
-        $html .= '</tbody>';
+        else {
+
+            foreach ($orders as $order) {
+                $html .= '
+                    <tr>
+                        <td class="text-capitalize">' . date('F j h:m', strtotime($order['datetime'] )) . '</td>
+                        <td class="text-capitalize">' . $order['order_id'] . '</td>
+                        <td class="text-capitalize">' . $order['customer'] . '</td>
+                        <td class="text-capitalize">' . $order['total'] . ' Ugx</td>                      
+                    </tr>
+                ';
+            }
+            $html .= '</tbody>';
+        }
         return $html;
 
     }

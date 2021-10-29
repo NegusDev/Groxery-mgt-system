@@ -18,29 +18,6 @@
     background-size: cover;
 }
 
-#top-sale .owl-carousel .item {
-    /*height: 400px;*/
-    /*background: red;*/
-}
-
-#top-sale .owl-carousel .item .product img {
-    max-width: 80%;
-    transition: transform .5 ease;
-    /*max-height: 30vh;*/
-}
-
-#top-sale .owl-carousel .item .product img:hover {
-    transform: scale(1.1);
-    /*max-height: 30vh;*/
-}
-
-
-#top-sale .owl-carousel .item .product a {
-    overflow: hidden;
-}
-
-
-
 html, body {
 	height: 100%;
 }
