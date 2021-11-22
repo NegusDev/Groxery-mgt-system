@@ -73,7 +73,7 @@ $(document).ready(function () {
         
         })
         .on('submit', '.delete-form', function () {
-            return confirm('Are you sure you want to delete this item');
+            return confirm('Are you sure you want to delete this item?');
         });
 });
 
