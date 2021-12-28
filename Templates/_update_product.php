@@ -51,7 +51,7 @@
                         </div>
                     </div>
 
-                    <input type="submit" class="form-control submit btn btn-success w-25 my-3" value="Update Product"
+                    <input type="submit"  class="form-control submit btn btn-success w-25 my-3" value="Update Product"
                            name="update">
 
                 </form>

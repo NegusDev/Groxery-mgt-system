@@ -54,6 +54,7 @@
                                 <button id="product-add-btn" type="button" class="btn btn-primary ms-2 w-25 float-end">
                                     Add
                                 </button>
+                               
                             </td>
                         </tr>
                         </tbody>
@@ -85,10 +86,13 @@
                     <input type="submit" class="btn btn-success ms-2 d-inline form-control w-25" value="Make sale"
                     name="save">
                     </div>
+                   
                     </div>
                 </div>
                 </form>
-                
+                <button id="printBtn" type="button" class="btn btn-primary ms-2 d-inline form-control w-25">
+                        Print receipt
+                    </button>
                 
             </div>
         </div>

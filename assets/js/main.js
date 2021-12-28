@@ -15,7 +15,7 @@ function calculateValue() {
 
 
 $(document).ready(function () {
-    
+        
     // $("#addMore").click(function () {
     //     let trows = $(".product-box").html();
     //     $(".product-box-extra").append(trows);
@@ -74,6 +74,10 @@ $(document).ready(function () {
         })
         .on('submit', '.delete-form', function () {
             return confirm('Are you sure you want to delete this item?');
+        }).on('click', '#printBtn', function() {
+            print();
         });
 });
+
+
 
