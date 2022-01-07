@@ -13,6 +13,14 @@ function calculateValue() {
     $('#grand-total').val(total);
 }
 
+function printContent(el) {
+    let restorePage = $('body');
+    let printty = $(el).text();
+    // let printty = document.getElementById(el).innerHTML;
+    restorePage = printty;
+    print();
+}
+
 
 $(document).ready(function () {
         
@@ -61,7 +69,7 @@ $(document).ready(function () {
                 '<input type="hidden" name="products['+ product_id +'][price]" value="'+ price +'"">' +
                 '<input type="hidden" name="products['+ product_id +'][total_price]" value="'+ total +'"">'
                 
-                let entry = '<tr><td>' + product + input +'</td><td>' + quantity + '</td><td>' + price + '</td><td class="subtotal">' + total + '</td><td><button type="button" id="remove" class="btn btn-danger text-center"><i class="fas fa-trash "></i></button></td></tr>';
+                let entry = '<tr id="print-doc"><td>' + product + input +'</td><td>' + quantity + '</td><td>' + price + '</td><td class="subtotal">' + total + '</td><td><button type="button" id="remove" class="btn btn-danger text-center"><i class="fas fa-trash "></i></button></td></tr>';
                 $("#shopping-cart tbody").append(entry);
                 $(document).on("click", "#remove", function () {
                     $(this).closest('tr').remove();
@@ -75,7 +83,9 @@ $(document).ready(function () {
         .on('submit', '.delete-form', function () {
             return confirm('Are you sure you want to delete this item?');
         }).on('click', '#printBtn', function() {
-            print();
+            let btn = $('#print-doc').text();
+            printContent(btn);
+            // print();
         });
 });
 
