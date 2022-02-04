@@ -13,12 +13,12 @@ function calculateValue() {
     $('#grand-total').val(total);
 }
 
-function printContent(el) {
-    let restorePage = $('body');
-    let printty = $(el).text();
-    // let printty = document.getElementById(el).innerHTML;
-    restorePage = printty;
-    print();
+function printData() {
+    let printArea = document.getElementById("shopping-cart");
+    newWin = window.open('');
+    newWin.document.write(printArea.outerHTML);
+    newWin.print();
+    newWin.close();
 }
 
 
@@ -83,8 +83,11 @@ $(document).ready(function () {
         .on('submit', '.delete-form', function () {
             return confirm('Are you sure you want to delete this item?');
         }).on('click', '#printBtn', function() {
-            let btn = $('#print-doc').text();
-            printContent(btn);
+            let printBlock = $(this).parents('#shopping-cart');
+            printBlock.hide();
+            window.print();
+            printBlock.show();
+            // printData();
             // print();
         });
 });
